@@ -13,6 +13,8 @@ Copyright 2013 Vladimir Jimenez (allejo@me.com)
 
 require_once 'markdownlib/Michelf/Markdown.inc.php';
 
+use \Michelf\Markdown;
+
 /**
  * The function that gets called to build a BZFS widget
  *
@@ -55,14 +57,14 @@ function readme_builder($attributes)
     $data = readme_json("github", array('user' => $user, 'repo' => $repo));
 
     // Return the generated HTML
-    return $widget;
+    return $data;
 }
 
 /**
  * @param $url
  * @return array|mixed
  */
-function get_json($url)
+function fetch_json($url)
 {
     $curl_handler = curl_init();
     curl_setopt($curl_handler, CURLOPT_URL, $url);
@@ -102,7 +104,7 @@ function readme_json($host, $array)
         $repo_location = $array['user'] . '/' . $array['repo']; // The user and repository name combination used to build the URL
 
         // Retrieve information about the repository itself
-        $repo_data = get_json("https://api.github.com/repos/" . $repo_location . "/readme");
+        $repo_data = fetch_json("https://api.github.com/repos/" . $repo_location . "/readme");
 
         // Store the necessary information in an array for easy access
         $readme_content = base64_decode($repo_data['content']);
