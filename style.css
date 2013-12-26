@@ -60,11 +60,12 @@
 .markdown pre {
   background-color: #f8f8f8;
   border: 1px solid #ddd;
+  border-radius: 3px;
   font-size: 13px;
   line-height: 19px;
+  margin-left: 30px;
   overflow: auto;
   padding: 6px 10px;
-  border-radius: 3px;
   word-wrap: normal;
 }
 .markdown pre code, .markdown pre tt {

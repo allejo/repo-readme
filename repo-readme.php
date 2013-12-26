@@ -3,7 +3,7 @@
 Plugin Name: Repo Readme
 Plugin URI: http://allejo.me/projects/wordpress/plugins/repo-readme
 Description: Allows you to retrieve the content of a README file and output the generated HTML
-Version: 0.8.0
+Version: 1.0.0
 Author: Vladimir Jimenez
 Author URI: http://allejo.me/
 License: GPLv3
