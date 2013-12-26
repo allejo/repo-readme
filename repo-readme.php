@@ -16,7 +16,7 @@ require_once 'markdownlib/Michelf/Markdown.inc.php';
 use \Michelf\Markdown;
 
 /**
- * The function that gets called to build a BZFS widget
+ * The function that gets called to generate the HTML from the README
  *
  * @param $attributes array Parameters that are passed in the short code
  *
