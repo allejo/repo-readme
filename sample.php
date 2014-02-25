@@ -3,9 +3,9 @@
 function getHtmlContents ($string, $tagname)
 {
     $pattern = '%(<' . $tagname . '[^>]*>.*?</' . $tagname . '>)%i';
-	
+    
     preg_match_all($pattern, $string, $matches);
-	
+    
     return $matches[1];
 }
 
@@ -15,5 +15,5 @@ $headers = array_merge(getHtmlContents($html, "h1"), getHtmlContents($html, "h2"
 
 foreach ($headers as $header)
 {
-	echo "#" . strtolower(str_replace(array("<h1>", "<h2>", "<h3>", "</h1>", "</h2>", "</h3>"), "", str_replace(" ", "-", $header))) . "<br />";
+    echo "#" . strtolower(str_replace(array("<h1>", "<h2>", "<h3>", "</h1>", "</h2>", "</h3>"), "", str_replace(" ", "-", $header))) . "<br />";
 }

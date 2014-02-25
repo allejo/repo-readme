@@ -1,4 +1,15 @@
 Repo Readme
 ===========
 
-A WordPress plugin which will access the README file of a repository and parse the markdown into HTML to be included in any page
+A WordPress plugin which will access the README file of a GitHub repository and parse the markdown into HTML to be included in any page or post.
+
+
+Example Usage
+-------------
+
+	[readme user="allejo" repo="repo-readme"]
+	
+License
+-------
+
+GPLv3
