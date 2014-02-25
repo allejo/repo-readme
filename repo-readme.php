@@ -18,9 +18,9 @@ use \Michelf\Markdown;
 /**
  * The function that gets called to generate the HTML from the README
  *
- * @param $attributes array Parameters that are passed in the short code
+ * @param  string[] $attributes Parameters that are passed in the short code
  *
- * @return string The HTML for the widget to be displayed
+ * @return string   The HTML for the widget to be displayed
  */
 function readme_widget_handler($attributes)
 {
@@ -38,9 +38,9 @@ function readme_widget_handler($attributes)
 /**
  * Builds the widget out of available HTML templates with the specified information
  *
- * @param $attributes array Parameters that are passed in the short code
+ * @param  string[] $attributes Parameters that are passed in the short code
  *
- * @return string The HTML for the widget to be displayed
+ * @return string   The HTML for the widget to be displayed
  */
 function readme_builder($attributes)
 {
@@ -61,9 +61,10 @@ function readme_builder($attributes)
 
 /**
  * Make a POST JSON query
- *
- * @param $url string The URL to send the POST query to
- * @return array|mixed An array of the information gotten from the JSON data
+ * 
+ * @param  string   $url The URL to send the POST query to
+ * 
+ * @return string[] An array of the information gotten from the JSON data
  */
 function fetch_json($url)
 {
@@ -86,11 +87,11 @@ function fetch_json($url)
 
 /**
  * Make a JSON request and get required information
- *
- * @param $host string The respective host to make the JSON query to
- * @param $array array An array of values to be passed that will be used to make the GET query
- *
- * @return array|mixed The necessary information retrieved from the JSON query
+ * 
+ * @param  string   $host   The respective host to make the JSON query to
+ * @param  string[] $array  An array of values to be passed that will be used to make the GET query
+ * 
+ * @return string[] The necessary information retrieved from the JSON query
  */
 function readme_json($host, $array)
 {
@@ -128,6 +129,23 @@ function readme_json($host, $array)
         // Return the generated HTML of the README
         return $readme_content;
     }
+}
+
+/**
+ * Return get the content inside of HTML tags
+ * 
+ * @param  string $htmlContent The string containing the HTML content we will be looking through
+ * @param  string $tag The HTML tag we will be looking for
+ * 
+ * @return string[] An array of all of the contents inside of all the tags
+ */
+function getHtmlContents ($htmlContent, $tag)
+{
+    $pattern = '%(<' . $tag . '[^>]*>.*?</' . $tag . '>)%i';
+    
+    preg_match_all($pattern, $htmlContent, $matches);
+    
+    return $matches[1];
 }
 
 // Register the 'readme' short code and make the handler function the main function
