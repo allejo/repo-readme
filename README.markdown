@@ -15,6 +15,8 @@ Stuff to Do
 - Come up with better name
 
 - Add mobile support
+
+- Add BitBucket support
 	
 License
 -------
