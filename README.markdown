@@ -13,6 +13,8 @@ Stuff to Do
 -----------
 
 - Come up with better name
+
+- Add mobile support
 	
 License
 -------
