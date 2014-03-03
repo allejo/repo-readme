@@ -17,6 +17,8 @@ Stuff to Do
 - Add mobile support
 
 - Add BitBucket support
+
+- Google Code support?
 	
 License
 -------
